@@ -53,3 +53,11 @@ python -c "from cli.hourly_job import HourlyJob; HourlyJob().run_once()"
 # Run tests (always works)
 python -m pytest tests/ -v
 ```
+
+
+```
+export PYTHONPATH=$PYTHONPATH:/home/ubuntu && python -c "from news_regime.cli.hourly_job import HourlyJob; HourlyJob().run_once()"
+```
+
+
+
