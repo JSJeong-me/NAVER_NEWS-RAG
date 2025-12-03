@@ -2,9 +2,7 @@ coding agent 에서 지금 작성한 python code 를 완성할 수 있도록 '�
 
 
 
-Here’s a clean spec you can hand to a coding agent to finish the skeleton you just created.
-
----
+Here’s a clean spec you can write codes as a coding agent to finish the following skeleton.
 
 ## 1. Project Context & Overall Goal
 
@@ -37,8 +35,6 @@ Implement the `analyst_agent` package so that:
    * Save the report to disk and log the cycle.
 
 2. The resulting `AnalystReport` object will later be consumed by a separate **Trader Agent** (multi-agent architecture), so its structure must remain stable.
-
----
 
 ## 2. Functional Requirements
 
@@ -97,8 +93,6 @@ The completed Analyst Agent must:
    * If the crawler fails, continue using existing DB data.
    * If the LLM call fails, produce a minimal report with numeric/statistical info only.
 
----
-
 ## 3. Non-Functional Requirements
 
 1. **Environment**
@@ -128,7 +122,6 @@ The completed Analyst Agent must:
    * Respect existing **public interfaces** (dataclasses, Enums, and function signatures) in the skeleton.
    * Add helper functions if needed, but avoid changing existing type signatures unless strictly necessary.
 
----
 
 ## 4. Code Purpose by Module
 
@@ -484,7 +477,6 @@ python -c "from analyst_agent.config import load_analyst_agent_config; print(loa
 
 Expected: prints a config object with default fields.
 
----
 
 ### Step 2 – CLI Tools
 
@@ -511,7 +503,6 @@ Expected:
 * `success` is True.
 * `stdout_head` begins with the formatted “News Articles …” section.
 
----
 
 ### Step 3 – Parsing Logic
 
@@ -543,8 +534,6 @@ EOF
 Expected:
 
 * Correct counts and some meaningful values (non-empty lists when data exists).
-
----
 
 ### Step 4 – Analysis Logic
 
@@ -635,8 +624,6 @@ Once stub works:
 * Replace stub logic with real API calls using the configured `model`.
 * Keep interface identical.
 
----
-
 ### Step 6 – Orchestrator & Entry Point
 
 **Implement**
@@ -662,7 +649,6 @@ Expected:
 * Saves a report file under `./reports/`.
 * Appends to a log file under `./logs/`.
 
----
 
 ## 6. Coding Style & Constraints for the Coding Agent
 
@@ -682,6 +668,5 @@ Expected:
   * Use standard `logging` module (INFO/ERROR/WARNING).
   * Don’t spam logs; one cycle summary is enough.
 
----
 
 If you give this document to a coding agent, it should have all the context and step-by-step guidance needed to safely turn the current skeleton into a fully working Analyst Agent, with minimal surprises and good testability.
